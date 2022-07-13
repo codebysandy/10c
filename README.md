@@ -6,9 +6,9 @@ Link: https://odmclasses.ml
 <hr>
 # science
 
-Physics - https://odmclasses.ml/phy
-Biology - https://odmclasses.ml/bio
-Chemistry - https://odmclasses.ml/chem
+- Physics - https://odmclasses.ml/phy
+- Biology - https://odmclasses.ml/bio
+- Chemistry - https://odmclasses.ml/chem
 <hr>
 # Math
 
