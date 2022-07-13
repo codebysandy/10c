@@ -1,5 +1,5 @@
 # 10c
-Link: odmclasses.ml
+Link: https://odmclasses.ml
 <hr>
 # science
 
