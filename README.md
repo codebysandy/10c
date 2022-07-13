@@ -1,4 +1,7 @@
 # 10c
+-this project is made by sandip mohanty for the presentation of class smartboard
+-do mention my github before copying the script
+-copyright ©codebysandy
 Link: https://odmclasses.ml
 <hr>
 # science
