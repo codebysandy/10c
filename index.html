@@ -78,14 +78,26 @@ padding: 0;
 </style>
 <body>
   <div class="div ">
- <p class="text">10-C</p>
+ <p id="txt" class="text">10-C</p>
  <p id="sub"></p>
   </div>
-  
+  <button id="btn" style="color: white; position: absolute; bottom: 0; font-size: 0.5rem; background-color: black;" onclick="remob()">made by sandy</button>
   
 </body>
 <script>
 let sub = prompt('subject name?');
-document.getElementById("sub").innerHTML = "sub:"+ sub;
+document.getElementById("sub").innerHTML = 'sub:'+sub;
+function remob(){
+  let password = "sandip01004"
+  let x = prompt("whats the password?")
+  if(x.toLowerCase() == password){
+    alert("sahi bola tu")
+    let bs = prompt("class and section")
+    document.getElementById("txt").innerHTML = bs;
+  }
+  else{
+    alert("wrong password try contant sandip for the password ");
+  }
+}
 </script>
 </html>
