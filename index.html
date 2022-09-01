@@ -54,7 +54,8 @@ padding: 0;
   -webkit-background-clip: text; 
   background-clip: text; 
   color: transparent;
-  
+  position: absolute;
+  bottom: 0;
   background-size: 300%;
   background-position: -100%;  
   
@@ -100,21 +101,14 @@ padding: 0;
 <body>
 
 <div class="div ">
- <p id="txt" class="text">10-C</p>
- <p id="sub"></p>
+ <a onclick="remob()"><p id="txt" class="text">10-C</p></a>
+ <a onclick="change()"><p id="sub"></p>
   </div>
 
 <div class="datetime">
   <div class="time"></div>
   <div class="date"></div>
 </div>
-  <button id="btn" style="
-      color: white; 
-      position: absolute; 
-      bottom: 0px; 
-      font-size: 0.5rem; 
-      background-color: black;" 
-onclick="remob()">made by sandy</button>
   
 
 
@@ -128,16 +122,27 @@ else {
   document.getElementById("sub").innerHTML = 'sub:'+sub;
 
 }
+function change(){
+   let sub = prompt('subject name?');
+   let na = "null";
+   if(sub == na){
+  alert('set to null');
+}
+else {
+  document.getElementById("sub").innerHTML = 'sub:'+sub;
+
+}
+} 
+
 function remob(){
   let password = "sandip01004"
-  let x = prompt("password bata saale")
+  let x = prompt("changing this text requires password")
   if(x.toLowerCase() == password){
-    alert("sahi bola tu")
-    let bs = prompt("class and section")
+    let bs = prompt("correct password now type the text you want to display")
     document.getElementById("txt").innerHTML = bs;
   }
   else{
-    alert("jaa na yaar")
+    alert("beep wrong password i prefer talking to sandip for help")
   }
 }
 </script>
