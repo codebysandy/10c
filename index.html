@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html>
-
 <head>
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
-
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Roboto:wght@500&family=Signika+Negative:wght@600&display=swap" rel="stylesheet">
 
   <meta charset="UTF-8">
@@ -72,21 +67,59 @@ padding: 0;
     background-position: 100% ;
   }
 }
+  /* date and time */
   
-  
+.datetime {
+  font-size: 7px;
+  padding: 10px;
+  color: #ffffff;
+  background: #444444;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  border-radius: 2px;
+  border-right: 10px #009578 solid;
+  width: 200px ;
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+}
+
+.time {
+  font-size: 3em;
+  color: #00ffcc;
+}
+
+.date {
+  margin-top: 12px;
+  font-size: 1.75em;
+}
+
   
 </style>
+</head>
+
 <body>
-  <div class="div ">
+
+<div class="div ">
  <p id="txt" class="text">10-C</p>
  <p id="sub"></p>
   </div>
   <button id="btn" style="color: white; position: absolute; bottom: 0; font-size: 0.5rem; background-color: black;" onclick="remob()">made by sandy</button>
   
-</body>
+<div class="datetime">
+  <div class="time"></div>
+  <div class="date"></div>
+</div>
+
+
 <script>
 let sub = prompt('subject name?');
-document.getElementById("sub").innerHTML = 'sub:'+sub;
+let na = "null";
+if(sub == na){
+  alert('set to null');
+}
+else {
+  document.getElementById("sub").innerHTML = 'sub:'+sub;
+
+}
 function remob(){
   let password = "sandip01004"
   let x = prompt("password bata saale")
@@ -96,8 +129,68 @@ function remob(){
     document.getElementById("txt").innerHTML = bs;
   }
   else{
-    alert("beep! Wrong password! ")
+    alert("jaa na yaar")
   }
 }
 </script>
-</html>
+
+
+<script defer>
+const timeElement = document.querySelector(".time");
+const dateElement = document.querySelector(".date");
+
+/**
+ * @param {Date} date
+ */
+function formatTime(date) {
+  const hours12 = date.getHours() % 12 || 12;
+  const minutes = date.getMinutes();
+  const isAm = date.getHours() < 12;
+
+  return `${hours12.toString().padStart(2, "0")}:${minutes
+    .toString()
+    .padStart(2, "0")} ${isAm ? "AM" : "PM"}`;
+}
+
+/**
+ * @param {Date} date
+ */
+function formatDate(date) {
+  const DAYS = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
+  ];
+  const MONTHS = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+  ];
+
+  return `${DAYS[date.getDay()]}, ${
+    MONTHS[date.getMonth()]
+  } ${date.getDate()} ${date.getFullYear()}`;
+}
+
+setInterval(() => {
+  const now = new Date();
+
+  timeElement.textContent = formatTime(now);
+  dateElement.textContent = formatDate(now);
+}, 200);
+
+</script>
+</body>
